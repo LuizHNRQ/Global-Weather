@@ -1,3 +1,4 @@
+//API manipulation
 const key = 'nJdr3ATxAMKDd4ANsKADKhnpQ9BVjn8h'; //API key
 
 //get Weather information
@@ -24,7 +25,7 @@ const getCity = async (city) => {
   return data[0];
 };
 
-
+/*
 getCity('londrina')
 .then(data => {
   return getWeather(data.Key);
@@ -32,6 +33,6 @@ getCity('londrina')
 .then( data => {
   console.log(data);
 })
-.catch(err => console.log(err));
+.catch(err => console.log(err));*/
 
 
