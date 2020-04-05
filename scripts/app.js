@@ -2,9 +2,10 @@
 const cityForm = document.querySelector('.change-location');
 const card = document.querySelector('.card');
 const details = document.querySelector('.details');
+const time = document.querySelector('img.time');
+const icon = document.querySelector('.icon img');
 
 const updateUI = (data) => {
- // details.querySelector('h5').innerHTML = `${data.cityDets.LocalizedName}`;
   const cityDetail = data.cityDets;
   const weather = data.weather;
   
@@ -18,8 +19,23 @@ const updateUI = (data) => {
   `;
   //remove d-none class
   if(card.classList.contains('d-none')){
-    //card.classList.remove('d-none');
+    card.classList.remove('d-none');
   }
+
+  //Change Image display
+    let timeSrc = weather.IsDayTime ? 'img/day.svg' :'img/night.svg';
+
+    //if(weather.IsDayTime){
+    //  timeSrc = 'img/day.svg'
+    // }else{
+    //  timeSrc = 'img/night.svg'
+    // }
+    time.setAttribute('src', timeSrc);
+
+    //Change Icon
+
+    const iconSrc = `img/icons/${weather.WeatherIcon}.svg`
+    icon.setAttribute('src', iconSrc);
   
 };
 
